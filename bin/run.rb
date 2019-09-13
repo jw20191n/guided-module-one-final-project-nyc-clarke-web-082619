@@ -50,7 +50,7 @@ def statistics(user)
 end
 
 def login_signup_prompt(prompt)
-    prompt_choice = prompt.select("", %w(login sign_up))
+    prompt_choice = prompt.select("Login or SignUp", %w(login sign_up))
     user = User.new
     if prompt_choice == "login"                                 # login
         prompt_user = prompt.ask("Enter your username: ")
@@ -118,9 +118,9 @@ screen_message
 user1 = login_signup_prompt(prompt)
 bool = true
 while bool do
-    prompt.select("") do |menu|
+    prompt.select("Menu") do |menu|
     menu.choice 'play with computer', ->  {
-        prompt.select("") do |menu|
+        prompt.select("choose your difficulty: ") do |menu|
   
             menu.choice 'easy', -> { 
                 system 'clear'
